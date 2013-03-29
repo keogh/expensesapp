@@ -1,0 +1,49 @@
+<div ng-controller="ExpensesController">
+	<div class="row">
+		<h1>Gastos</h1>
+	</div>
+	<br/>
+
+	<div class="row well">
+		<h4>Agregar gasto</h4>
+
+		<form class="form-horizontal">
+			<div class="control-group">
+				<label class="control-label" for="name">Concepto: </label>
+				<div class="controls">
+					<input id="name" type="text" class="input-xlarge" required />
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="">Precio: </label>
+				<div class="controls">
+					<div class="input-prepend">
+						<span class="add-on">$</span>
+						<input id="price" type="number" class="input-small" required />
+					</div>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="date">Fecha: </label>
+				<div class="controls">
+					<div class="input-prepend">
+						<span class="add-on"><i class="icon-calendar">&nbsp;</i></span>
+						<input id="date" type="text" class="input-small" required />
+					</div>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="owner">¿Quién gastó?</label>
+				<div class="controls">
+					<select id="owner"></select>
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<button class="btn btn-primary">Guardar</button>
+					<button class="btn">Cancelar</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
