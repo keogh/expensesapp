@@ -2,6 +2,16 @@ class ExpensesController < ApplicationController
 	before_filter :authenticate_user!
 
 	def index
+		respond_to do |format|
+			format.html do
+				@tags  = Tag.all.map do |tag|
+					{
+						id: tag.id,
+						text: tag.name
+					}
+				end
+			end
+		end
 	end
 
 	def create

@@ -10,11 +10,8 @@ app.controller('ExpensesController', ['$scope', '$http', function($scope, $http)
 	$scope.group_users = [];
 
 	$scope.options = {
-		tags: [
-			{id:1, text: 'Uno'},
-			{id:2, text: 'Dos'},
-		]
-	};
+		tags: window.data.tags
+	}
 
 	var getGroups = function () {
 		$http.get('/groups')
@@ -23,6 +20,15 @@ app.controller('ExpensesController', ['$scope', '$http', function($scope, $http)
 			});
 	};
 	getGroups();
+
+	var getTags = function () {
+		$http.get('/tags')
+			.success(function (data) {
+				console.log(data);
+				$scope.options.tags = data.tags;
+			});
+	}
+	getTags();
 
 	$scope.cancelNew = function () {
 		$scope.new_expense = null;

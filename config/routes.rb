@@ -8,6 +8,7 @@ Expensesapp::Application.routes.draw do
   end
 
   resources :groups, :only => [:index]
+  resources :tags, :only => [:index]
 
   root :to => "expenses#index"
   # The priority is based upon order of creation:

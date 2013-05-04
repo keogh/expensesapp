@@ -1,3 +1,7 @@
+<script type="text/javascript">
+	window.data = window.data || {};
+	window.data.tags = <%= raw @tags.to_json %>
+</script>
 <div ng-controller="ExpensesController">
 	<div class="row">
 		<h1>Gastos</h1>
