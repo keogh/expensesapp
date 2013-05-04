@@ -9,6 +9,13 @@ app.controller('ExpensesController', ['$scope', '$http', function($scope, $http)
 	$scope.creating = false;
 	$scope.group_users = [];
 
+	$scope.options = {
+		tags: [
+			{id:1, text: 'Uno'},
+			{id:2, text: 'Dos'},
+		]
+	};
+
 	var getGroups = function () {
 		$http.get('/groups')
 			.success(function (data) {

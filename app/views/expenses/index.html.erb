@@ -37,12 +37,18 @@
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="owner">¿Quién gastó?</label>
+				<label class="control-label" for="owner">¿Quién gastó? </label>
 				<div class="controls">
 					<select ng-model="new_expense.owner_id" id="owner" ui-select2 class="owners">
 						<option value="0"></option>
 						<option ng-repeat="user in group_users" value="{{user.id}}">{{user.email}}</option>
 					</select>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="tags">Secciones: </label>
+				<div class="controls">
+					<input ng-model="new_expense.tags" id="tags" ui-select2="options" class="owners" />
 				</div>
 			</div>
 			<div class="control-group">
