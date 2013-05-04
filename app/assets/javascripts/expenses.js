@@ -1,7 +1,9 @@
 app.controller('ExpensesController', ['$scope', '$http', function($scope, $http) {
 	window.scope = $scope;
 
-	$scope.new_expense = null;
+	$scope.new_expense = {
+		//owner_id: 0
+	};
 	$scope.filter_data = {};
 	$scope.expenses = [];
 	$scope.creating = false;

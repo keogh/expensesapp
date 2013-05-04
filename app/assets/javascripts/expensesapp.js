@@ -26,3 +26,8 @@ app.factory('httpInterceptor', ['$q', function($q) {
 	}
 }]);
 
+app.value('ui.config', {
+  select2: {
+    width: 'element'
+  }
+});
