@@ -6,6 +6,8 @@ Expensesapp::Application.routes.draw do
       get :filter, :action => :filter
     end
   end
+
+  root :to => "expenses#app"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
