@@ -5,6 +5,15 @@ app.controller('ExpensesController', ['$scope', '$http', function($scope, $http)
 	$scope.filter_data = {};
 	$scope.expenses = [];
 	$scope.creating = false;
+	$scope.group_users = [];
+
+	var getGroups = function () {
+		$http.get('/groups')
+			.success(function (data) {
+				$scope.group_users = data.users;
+			});
+	};
+	getGroups();
 
 	$scope.cancelNew = function () {
 		$scope.new_expense = null;
