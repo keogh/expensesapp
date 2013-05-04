@@ -15,5 +15,6 @@
 //= require jquery.blockUI.js
 //= require angular.min.js
 //= require angular-ui
+//= require select2
 //= require expensesapp.js
 //= require_tree .

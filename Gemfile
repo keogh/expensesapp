@@ -25,6 +25,8 @@ gem 'angular-ui-rails'
 gem 'bootstrap-sass', '2.2.2.0'
 gem 'devise'
 
+gem 'select2-rails'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
