@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require jquery.blockUI.js
 //= require angular.min.js
+//= require angular-ui
 //= require expensesapp.js
 //= require_tree .

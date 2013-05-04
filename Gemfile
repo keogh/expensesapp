@@ -21,6 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'angular-ui-rails'
 gem 'bootstrap-sass', '2.2.2.0'
 gem 'devise'
 

@@ -1,4 +1,4 @@
-app = angular.module('expensesapp', []);
+app = angular.module('expensesapp', ['ui']);
 
 app.config(['$httpProvider', function($httpProvider) {
 	$httpProvider.defaults.headers.post['X-CSRF-Token'] = $("meta[name='csrf-token']").attr('content');
