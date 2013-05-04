@@ -50,13 +50,15 @@ app.controller('ExpensesController', ['$scope', '$http', function($scope, $http)
 				expense: {
 					name: expense.name,
 					price: expense.price,
-					date: expense.date,
-					owner_id: 1
-				}
+					date: expense.date
+				},
+				tags: expense.tags
 			} 
 		})
 		.success(function (data) {
-			$scope.new_expense = null;
+			if (data.success) {
+				$scope.new_expense = null;
+			}
 		});
 	}
 

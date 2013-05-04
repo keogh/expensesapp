@@ -15,12 +15,27 @@ class ExpensesController < ApplicationController
 	end
 
 	def create
-		expense = Expense.new(params[:expense])
-		expense.creator_id = current_user.id
-		if expense.save
-			render :json => {success: true, message: 'Gasto creado.'}
-		else
-			render :json => {success: false, message: 'Hubo un error al crear el gasto. Intente de nuevo.'}
+		begin
+			ActiveRecord::Base.transaction do
+				expense = Expense.new(params[:expense])
+				expense.creator_id = current_user.id
+
+				params[:tags].each do |tag|
+					begin
+						expense.tags.push Tag.find(tag[:id])
+					rescue
+						expense.tags.push Tag.new(:name => tag[:text])
+					end
+				end
+
+				if expense.save
+					render :json => {success: true, message: 'Gasto creado.'}
+				else
+					raise 'Hubo un error al crear el gasto. Intente de nuevo.'
+				end
+			end
+		rescue Exception => e
+			render :json => {success: false, message: e.message}
 		end
 	end
 
