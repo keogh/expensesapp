@@ -6,7 +6,7 @@ class ExpensesController < ApplicationController
 
 	def create
 		expense = Expense.new(params[:expense])
-		
+		expense.creator_id = current_user.id
 		if expense.save
 			render :json => {success: true, message: 'Gasto creado.'}
 		else
