@@ -7,6 +7,7 @@ app.config(['$httpProvider', function($httpProvider) {
 app.factory('httpInterceptor', ['$q', function($q) {
 	return function(promise) {
 		return promise.then(function(response) {
+			$.unblockUI();
 			if (response.data.message) {
 				if (response.data.success) 
 					app.message.success(response.data.message);
@@ -18,6 +19,7 @@ app.factory('httpInterceptor', ['$q', function($q) {
 			}
 			return response;
 		}, function(response) {
+			$.unblockUI();
 			app.message.error('Ha ocurrido un error en su petición');
 		});
 	}

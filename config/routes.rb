@@ -1,5 +1,9 @@
 Expensesapp::Application.routes.draw do
-  resources :expenses
+  resources :expenses do
+    collection do
+      get :filter, :action => :filter
+    end
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
